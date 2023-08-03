@@ -37,6 +37,20 @@
  font-weight: 700;
  transition: 0.3s;
  color: var(--colors-black);
+ position: relative;
+}
+
+.container .sidebar .navbarMobile a:hover::before{
+ content: "";
+  width: 48px;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #2486c7, #687bd3, #a966c9, #dc46a6, #f9266f, #f14249, #e05c27, #c77200, #aa840e, #90902f, #7a984e, #6c9c6c);
+  -webkit-animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	  animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 
@@ -44,13 +58,19 @@
  margin: 8px 0 0 0;
 }
 
-.container .sidebar .navbarMobile a:hover{
- text-decoration: underline;
+.container .sidebar .navbarMobile a:active:before{
+ content: "";
+  width: 48px;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #2486c7, #687bd3, #a966c9, #dc46a6, #f9266f, #f14249, #e05c27, #c77200, #aa840e, #90902f, #7a984e, #6c9c6c);
+  -webkit-animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	  animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.container .sidebar .navbarMobile a:active{
- color: var(--colors-orange);
-}
 
 .container .btnMenu{
  height: 40px;
@@ -89,8 +109,54 @@
  .container .navbar{
   display: flex;
  }
+
+ .navbar{
+  max-width: 70%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+ }
+
+ .navbar a {
+  font-size: var(--size-28);
+  font-weight: 700;
+  transition: 0.3s;
+  color: var(--colors-black);
+  position: relative;
+ }
+
+ .navbar a:hover::before{
+  content: "";
+  width: 48px;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #2486c7, #687bd3, #a966c9, #dc46a6, #f9266f, #f14249, #e05c27, #c77200, #aa840e, #90902f, #7a984e, #6c9c6c);
+  -webkit-animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	  animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+ }
+
 }
 
 @media screen and (min-width: 1440px){
- 
+ .navbar a {
+  font-size: var(--size-24);
+ }
 }
+
+
+@-webkit-keyframes scale-up-hor-center{
+ 0%{-webkit-transform:scaleX(0) translate(-50%,-50%);
+ transform:scaleX(0) translate(-100%,0)}
+ 100%{-webkit-transform:scaleX(1) translate(-50%,-50%);
+ transform:scaleX(1) translate(-50%,0)}}
+
+@keyframes scale-up-hor-center{
+ 0%{-webkit-transform:scaleX(0) translate(-50%,-50%);
+ transform:scaleX(0) translate(-100%,0)}
+ 100%{-webkit-transform:scaleX(1) translate(-50%,-50%);
+ transform:scaleX(1) translate(-50%,0)}}

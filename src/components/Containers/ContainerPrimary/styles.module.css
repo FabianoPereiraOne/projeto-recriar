@@ -1,4 +1,23 @@
 .containerPrimary{
  width: 100%;
  height: auto;
+ background: url("../../../../public/assets/wave2.png");
+ background-position: right top;
+ background-repeat: no-repeat;
+ background-size: 105px 132px;
+ object-fit: cover;
+}
+
+
+
+@media screen and (min-width:768px){
+ .containerPrimary{
+  background-size: 246px 202px;
+ }
+}
+
+@media screen and (min-width: 1024px){
+ .containerPrimary{
+  background-size: 250px 250px;
+ }
 }
