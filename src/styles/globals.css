@@ -22,6 +22,8 @@
   --size-36: 2.25rem;
   --size-48: 3rem;
   --size-64: 4rem;
+  --font-primary: 'Luckiest Guy', cursive;
+  --font-secondary:'Source Sans 3', sans-serif;
 }
 
 * {

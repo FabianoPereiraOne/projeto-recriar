@@ -1,0 +1,50 @@
+.container {
+ width: 100%;
+ height: auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ bottom: 24px;
+ left: 50%;
+}
+
+.btnExplore{
+ width: 148px;
+ height: 40px;
+ background: var(--colors-blue);
+ border-radius: 42px;
+ font-family: var(--font-primary);
+ font-size: var(--size-16);
+ font-weight: 400;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--colors-white);
+ letter-spacing: 2px;
+}
+
+.container .linkInstagram, .container .linkFacebook, .container .linkWhatsApp{
+ width: 40px;
+ height: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 50%;
+ margin: 0 0 0 8px;
+ color: var(--colors-white);
+ font-size: 24px;
+}
+
+.container .linkInstagram{
+ background-color: var(--colors-orange);
+}
+
+.container .linkFacebook{
+ background-color: var(--colors-yellow);
+}
+
+.container .linkWhatsApp{
+ background-color: var(--colors-green);
+}

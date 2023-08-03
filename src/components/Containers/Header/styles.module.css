@@ -1,0 +1,97 @@
+.container{
+ padding: 16px 24px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.container .navbar{
+ display: none;
+}
+
+.container .sidebar{
+ width: 100%;
+ height: 100vh;
+ overflow: hidden;
+ position: fixed;
+ left: 0;
+ top: 0;
+ background: var(--colors-yellow-light);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+}
+
+.container .sidebar .navbarMobile{
+ width: 80%;
+ height: 60vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.container .sidebar .navbarMobile a{
+ font-size: var(--size-28);
+ font-weight: 700;
+ transition: 0.3s;
+ color: var(--colors-black);
+}
+
+
+.container .sidebar .navbarMobile a:not(:first-child){
+ margin: 8px 0 0 0;
+}
+
+.container .sidebar .navbarMobile a:hover{
+ text-decoration: underline;
+}
+
+.container .sidebar .navbarMobile a:active{
+ color: var(--colors-orange);
+}
+
+.container .btnMenu{
+ height: 40px;
+ width: 40px;
+ font-size: 36px;
+ border: none;
+ background: none;
+ color: var(--colors-black);
+}
+
+.container .sidebar  .btnClose{
+ height: 40px;
+ width: 40px;
+ position: absolute;
+ left: 16px;
+ top: 16px;
+ font-size: 36px;
+ background: none;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: none;
+}
+
+.container .disable {
+ display: none;
+}
+
+
+@media screen and (min-width: 768px){
+ .container .btnMenu,.container .sidebar {
+  display: none;
+ }
+
+ .container .navbar{
+  display: flex;
+ }
+}
+
+@media screen and (min-width: 1440px){
+ 
+}
