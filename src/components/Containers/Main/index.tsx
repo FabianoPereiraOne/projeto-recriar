@@ -5,21 +5,21 @@ export const Main = () => {
  return (
   <section className={styles.mainContent}>
    <div className={styles.groupTitle}>
-    <h1>
+    <h1 className={styles.title}>
      Associação
-     <strong className={styles.Color1}> R</strong>
-     <span className={styles.Color2}>e</span>
-     <span className={styles.Color3}>c</span>
-     <span className={styles.Color4}>r</span>
-     <span className={styles.Color5}>i</span>
-     <span className={styles.Color6}>a</span>
-     <span className={styles.Color7}>r</span>
+     <strong className={styles.color1}> R</strong>
+     <span className={styles.color2}>e</span>
+     <span className={styles.color3}>c</span>
+     <span className={styles.color4}>r</span>
+     <span className={styles.color5}>i</span>
+     <span className={styles.color6}>a</span>
+     <span className={styles.color7}>r</span>
     </h1>
-    <p>
+    <p className={styles.paragraph}>
      Transformando vidas desde 2002: Conheça nossa história, uma jornada
      dedicada à educação e cuidado infantil.
     </p>
-    <a href="#about">Saiba Mais</a>
+    <a href="#about" className={styles.btnMore}>Saiba Mais</a>
    </div>
    <div className={styles.groupImage}>
     <Image
