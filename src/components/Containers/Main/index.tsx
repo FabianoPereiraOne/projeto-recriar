@@ -26,8 +26,8 @@ export const Main = () => {
      src="/assets/childrens.png"
      unoptimized
      alt="Imagem de crianças modificada - Associação Recriar"
-     width={500}
-     height={400}
+     width={450}
+     height={350}
     />
    </div>
   </section>

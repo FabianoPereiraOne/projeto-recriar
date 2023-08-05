@@ -1,23 +1,35 @@
 .containerPrimary{
  width: 100%;
  height: auto;
+ position: relative;
+}
+
+.containerPrimary:before{
+ content: "";
+ width: 105px;
+ height: 133px;
+ position: absolute;
+ right: 0;
+ top: 0;
  background: url("../../../../public/assets/wave2.png");
  background-position: right top;
  background-repeat: no-repeat;
  background-size: 105px 132px;
  object-fit: cover;
+ z-index: 1;
 }
 
 
 
 @media screen and (min-width:768px){
- .containerPrimary{
+ .containerPrimary:before{
+  width: 260px;
+  height: 210px;
+  width: 250px 205px;
   background-size: 246px 202px;
  }
 }
 
 @media screen and (min-width: 1024px){
- .containerPrimary{
-  background-size: 250px 250px;
- }
+ 
 }

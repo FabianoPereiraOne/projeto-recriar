@@ -16,6 +16,7 @@
  position: fixed;
  left: 0;
  top: 0;
+ z-index: 5;
  background: var(--colors-yellow-light);
  display: flex;
  flex-direction: column;
@@ -81,6 +82,7 @@
  border: none;
  background: none;
  color: var(--colors-black);
+ z-index: 1;
 }
 
 .container .sidebar  .btnClose{
@@ -110,6 +112,7 @@
 
  .container .navbar{
   display: flex;
+  z-index: 1;
  }
 
  .navbar{

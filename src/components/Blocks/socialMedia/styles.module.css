@@ -10,6 +10,7 @@
 .btnExplore{
  width: 148px;
  height: 40px;
+ padding: 4px 0 0 0;
  background: var(--colors-blue);
  border-radius: 42px;
  font-family: var(--font-primary);
