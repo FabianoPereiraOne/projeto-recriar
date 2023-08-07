@@ -19,6 +19,11 @@
  z-index: 1;
 }
 
+.containerPrimary:after{
+ content: "";
+}
+
+
 
 
 @media screen and (min-width:768px){
@@ -30,6 +35,19 @@
  }
 }
 
-@media screen and (min-width: 1024px){
- 
+@media screen and (min-width: 1440px){
+ .containerPrimary:after{
+  content: "";
+  width: 250px;
+  height: 350px;
+  position: absolute;
+  left: 0;
+  top: 90vh;
+  background: url("../../../../public/assets/wave4.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 250px 350px;
+  object-fit: cover;
+  z-index: 1;
+ }
 }

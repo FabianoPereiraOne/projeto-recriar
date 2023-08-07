@@ -10,6 +10,7 @@
   --colors-orange-light: #ED680B;
   --colors-green: #6C9C6C;
   --colors-green-light: #89B372;
+  --gradient-invert: linear-gradient(180deg, #99C8E2 0%, rgba(255, 255, 255, 0.00) 100%);
 
   --size-10: 0.625rem;
   --size-14: 0.875rem;

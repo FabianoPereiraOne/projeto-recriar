@@ -3,8 +3,8 @@
  height: auto;
  display: flex;
  align-items: center;
- justify-content: center;
- margin: 32px 0 0 0;
+ justify-content: flex-start;
+ margin: 16px 0 0 0;
 }
 
 .btnExplore{
@@ -37,12 +37,27 @@
 
 .container .linkInstagram{
  background-color: var(--colors-orange);
+ transition: 0.3s;
+}
+
+.container .linkInstagram:hover{
+ background-color: var(--colors-orange-light);
 }
 
 .container .linkFacebook{
  background-color: var(--colors-yellow);
+ transition: 0.3s;
+}
+
+.container .linkFacebook:hover{
+ background-color: var(--colors-yellow-light);
 }
 
 .container .linkWhatsApp{
  background-color: var(--colors-green);
+ transition: 0.3s;
+}
+
+.container .linkWhatsApp:hover{
+ background-color: var(--colors-green-light);
 }

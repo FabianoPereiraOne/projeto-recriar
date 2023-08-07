@@ -36,7 +36,7 @@ export const Header = () => {
      <a href="#">Eventos</a>
      <a href="#">Contato</a>
     </nav>
-    <SocialMedia />
+    <SocialMedia router='#about' label='Conheça a historia da Recriar' routerName='Explorar' />
    </aside>
   </header>
  )
