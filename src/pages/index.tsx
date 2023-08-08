@@ -1,4 +1,5 @@
 import { About } from "@/components/Containers/About";
+import { Banner } from "@/components/Containers/Banner";
 import { ContainerPrimary } from "@/components/Containers/ContainerPrimary";
 import { Header } from "@/components/Containers/Header";
 import { Main } from "@/components/Containers/Main";
@@ -12,6 +13,7 @@ export default function Home() {
         <Header />
         <Main />
         <About />
+        <Banner />
       </ContainerPrimary>
     </>
   )
