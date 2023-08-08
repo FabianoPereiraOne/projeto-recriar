@@ -20,7 +20,7 @@
  align-items: center;
  justify-content: center;
  color: var(--colors-white);
- letter-spacing: 2px;
+ letter-spacing: 1px;
 }
 
 .container .linkInstagram, .container .linkFacebook, .container .linkWhatsApp{
