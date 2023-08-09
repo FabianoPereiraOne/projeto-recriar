@@ -1,3 +1,9 @@
+import styles from "./styles.module.css"
+
 export const Maps = () => {
- return (<div>Maps</div>)
+ return (
+  <section className={styles.container}>
+
+  </section>
+ )
 }

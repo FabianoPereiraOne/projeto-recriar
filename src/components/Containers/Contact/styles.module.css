@@ -1,0 +1,146 @@
+.container{
+ margin: 100px 0 0 0;
+ height: 100vh;
+ width: 100%;
+ padding: 0 24px; 
+ position: relative;
+}
+
+.container:before{
+ content: "";
+ width: 200px;
+ height: 100px;
+ background: url("/assets/wave7.png");
+ background-position: left center;
+ background-repeat: no-repeat;
+ background-size: contain;
+ position: absolute;
+ left: 0;
+ top: -100px;
+}
+
+.container:after{
+ content: "";
+ width: 200px;
+ height: 100px;
+ background: url("/assets/wave8.png");
+ background-position: right center;
+ background-repeat: no-repeat;
+ background-size: contain;
+ position: absolute;
+ right: 0;
+ bottom: -100px;
+}
+
+.hidden{
+ display: none;
+}
+
+.form{
+ width: 100%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ margin: 48px auto 0 auto;
+ max-width: 600px;
+}
+
+.form input{
+ border: 1px solid var(--colors-gray);
+ color: var(--colors-black);
+ font-size: var(--size-20);
+ padding: 10px 20px;
+ border-radius: 24px;
+ z-index: 2;
+}
+
+.form textarea{
+ border: 1px solid var(--colors-gray);
+ color: var(--colors-black);
+ font-size: var(--size-20);
+ border-radius: 24px;
+ resize: none;
+ margin: 16px 0 0 0;
+ width: 100%;
+ height: 208px !important;
+ padding: 10px 20px;
+ z-index: 2;
+}
+
+.form input:focus{
+ outline-color: var(--colors-blue);
+}
+
+.form textarea:focus{
+ outline-color: var(--colors-blue);
+}
+
+.form input:not(:first-of-type){
+ margin: 16px 0 0 0;
+}
+
+.btnSubmit{
+ width: 208px;
+ height: 50px;
+ border-radius: 24px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--colors-blue-light);
+ border: none;
+ font-size: var(--size-20);
+ color: var(--colors-white);
+ margin: 48px auto 0 auto;
+ font-family: var(--font-primary);
+ letter-spacing: 1px;
+ transition: 0.3s;
+ z-index: 2;
+}
+
+.btnSubmit:hover{
+ background: var(--colors-blue);
+}
+
+@media screen and (min-width: 768px){
+ .container{
+  height: 80vh;
+ }
+
+ .container:before{
+  content: "";
+  width: 300px;
+  height: 200px;
+  left: 0;
+  top: -100px;
+ }
+ 
+ .container:after{
+  content: "";
+  width: 300px;
+  height: 200px;
+  right: 0;
+  bottom: -100px;
+ }
+}
+
+@media screen and (min-width: 1440px){
+ .container{
+  height: 100vh;
+ }
+
+ .container:before{
+  content: "";
+  width: 600px;
+  height: 400px;
+  left: 0;
+  top: -150px;
+ }
+ 
+ .container:after{
+  content: "";
+  width: 600px;
+  height: 300px;
+  right: 0;
+  bottom: -350px;
+ }
+}
