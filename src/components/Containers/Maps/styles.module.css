@@ -1,4 +1,33 @@
 .container{
  width: 100%;
- height: 100vh;
+ min-height: 100vh;
+ position: relative;
+}
+
+.container:before{
+ content: '';
+}
+
+.center{
+ max-width: 900px;
+ max-height: 800px;
+ width: 80%;
+ height: 600px;
+ margin: 0 auto;
+}
+
+@media screen and (min-width: 1440px){
+ .container:before{
+  content: '';
+  width: 240px;
+  height: 400px;
+  background: url('/assets/wave9.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 100px;
+  top: 72px;
+  transform: translate(-50%,-50%);
+ }
 }
