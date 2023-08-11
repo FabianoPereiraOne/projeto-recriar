@@ -1,5 +1,5 @@
 import { Title } from '@/components/Blocks/Title'
-import emailjs from "@emailjs/browser"
+import { useSendMail } from '@/hooks/useSendMail'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import styles from './styles.module.css'
@@ -10,6 +10,7 @@ export const Contact = () => {
  const [subject, setSubject] = useState('')
  const [email, setEmail] = useState('')
  const [message, setMessage] = useState('')
+ const [load, setLoad] = useState(false)
 
  const handlerClearInputs = () => {
   setName('')
@@ -18,10 +19,19 @@ export const Contact = () => {
   setMessage('')
  }
 
+ const handlerVerifyInputs = () => {
+  if (name.length <= 0 || subject.length <= 0 || email.length <= 0 || message.length <= 0) {
+   return false
+  } else {
+   return true
+  }
+ }
+
  const handlerSendMail = async (event: any) => {
+  setLoad(true)
   event.preventDefault()
 
-  if (name.length <= 0 || subject.length <= 0 || email.length <= 0 || message.length <= 0) {
+  if (handlerVerifyInputs() == false) {
    toast.error("Preencha todos os dados")
    return
   }
@@ -33,13 +43,11 @@ export const Contact = () => {
    subject: subject
   }
 
-  emailjs.send(`${process.env.NEXT_PUBLIC_SERVER_ID}`, `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`, templateParams, process.env.NEXT_PUBLIC_MAIL_KEY).then(() => {
-   handlerClearInputs()
-   toast.success("Email enviado com sucesso!")
-  }).catch((err) => {
-   console.log('Erro: ' + err.message)
-   toast.error("Ops! Erro ao enviar email!")
-  })
+  useSendMail(templateParams)
+   .finally(() => {
+    handlerClearInputs()
+    setLoad(false)
+   })
  }
 
 
@@ -51,7 +59,7 @@ export const Contact = () => {
     <input required type="text" name="email" placeholder="Email" maxLength={50} value={email} onChange={(e) => setEmail(e.target.value)} />
     <input required type="text" name="subject" placeholder='Assunto' maxLength={50} value={subject} onChange={(e) => setSubject(e.target.value)} />
     <textarea required name="message" placeholder='Mensagem' maxLength={250} value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-    <button type='submit' className={styles.btnSubmit}>Enviar</button>
+    <button type='submit' disabled={load} className={styles.btnSubmit}>{load ? 'Enviado...' : 'Enviar'}</button>
    </form>
   </section>
  )
