@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import styles from './styles.module.css'
+import Image from 'next/image';
+import { Link } from 'react-scroll';
+import styles from './styles.module.css';
 
 export const Main = () => {
  return (
@@ -19,7 +20,7 @@ export const Main = () => {
      Transformando vidas desde 2002: Conheça nossa história, uma jornada
      dedicada à educação e cuidado infantil.
     </p>
-    <a href="#about" className={styles.btnMore}>Saiba Mais</a>
+    <Link to="about" spy={true} smooth={true} duration={1000} className={styles.btnMore}>Saiba Mais</Link>
    </div>
    <div className={styles.groupImage}>
     <Image

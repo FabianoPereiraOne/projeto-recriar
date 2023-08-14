@@ -1,11 +1,11 @@
-import { Title } from '@/components/Blocks/Title'
-import { SocialMedia } from '@/components/Blocks/socialMedia'
-import Image from 'next/image'
-import styles from './styles.module.css'
+import { Title } from '@/components/Blocks/Title';
+import { SocialMedia } from '@/components/Blocks/socialMedia';
+import Image from 'next/image';
+import styles from './styles.module.css';
 
 export const About = () => {
  return (
-  <main className={styles.container}>
+  <main className={styles.container} id="about">
    <Title title="Sobre" subtitle="" />
    <div className={styles.contentAbout}>
     <figure className={styles.contentImage}>
@@ -19,7 +19,7 @@ export const About = () => {
 
       O Instituto Educacional Recriar operava de forma social e particular, mas em 2013, graças aos esforços do então Presidente Jecilenio e em colaboração com a prefeitura, estabelecemos um convênio que nos permitiu evoluir para a Creche Comunitária Recriar. Atualmente, atendemos 146 crianças no Bairro Cruzeiro do Sul e, além disso, estendemos nossos serviços ao Bairro Petrovale, onde oferecemos atendimento integral para 350 crianças, abrangendo a faixa etária de 4 meses a 05 anos de idade.
      </p>
-     <SocialMedia router='#explorar' label='Explore mais sobre a Recriar' routerName='Explorar' />
+     <SocialMedia router='events' label='Explore mais sobre a Recriar' routerName='Explorar' />
     </div>
    </div>
   </main>

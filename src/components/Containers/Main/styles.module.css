@@ -90,6 +90,7 @@
  font-family: var(--font-primary);
  letter-spacing: 2px;
  transition: 0.3s;
+ cursor: pointer;
 }
 
 .btnMore:hover{

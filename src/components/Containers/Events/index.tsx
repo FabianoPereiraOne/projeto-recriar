@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 
 export const Events = () => {
  return (
-  <section className={styles.container}>
+  <section className={styles.container} id="events">
    <Title title='Eventos' subtitle='' />
    <article className={styles.card}>
     <figure className={styles.banner}>
@@ -16,7 +16,7 @@ export const Events = () => {
     <strong className={styles.title}>Reunião Geral</strong>
     <address className={styles.address}><strong>Local:</strong> Rua Vinte e Cinco 532 Jardim das Alterosas</address>
     <p className={styles.paragraph}>Nequedbadd suspendisse sed nunc in sit arcu amet. Sed orci at nisi soll ici tudin  ornare eget pelleLorene que dba dd sus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pelleLorsus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pellee...Ne quedbad dNequedbadd susp.</p>
-    <SocialMedia router='#saibamais23' label='Veja mais sobre o evento' routerName='Saiba mais' />
+    <SocialMedia btnExploreVisible={false} router='https://teste.com' label='Veja mais sobre o evento' routerName='Saiba mais' />
    </article>
    <article className={styles.card}>
     <figure className={styles.banner}>
@@ -26,7 +26,7 @@ export const Events = () => {
     <strong className={styles.title}>Reunião Geral</strong>
     <address className={styles.address}><strong>Local:</strong> Rua Vinte e Cinco 532 Jardim das Alterosas</address>
     <p className={styles.paragraph}>Nequedbadd suspendisse sed nunc in sit arcu amet. Sed orci at nisi soll ici tudin  ornare eget pelleLorene que dba dd sus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pelleLorsus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pellee...Ne quedbad dNequedbadd susp.</p>
-    <SocialMedia router='#saibamais22' label='Veja mais sobre o evento' routerName='Saiba mais' />
+    <SocialMedia btnExploreVisible={false} router='#saibamais22' label='Veja mais sobre o evento' routerName='Saiba mais' />
    </article>
    <ButtonMore />
   </section>
