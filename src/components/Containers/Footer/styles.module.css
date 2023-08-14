@@ -1,0 +1,34 @@
+.footer{
+ height: 35vh;
+ position: relative;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background: linear-gradient(180deg, rgba(36, 134, 199, 0.00) 0%, #2486C7 100%);
+ padding: 24px;
+}
+
+.footer p{
+ font-size: var(--size-16px);
+ color: var(--colors-black);
+ margin: 8px 0 0 0;
+}
+
+.footer div{
+ justify-content: center;
+}
+
+@media screen and (min-width: 1440px){
+ .footer{
+  height: 30vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+ }
+
+ .footer div{
+  width: 200px;
+ }
+}

@@ -3,6 +3,7 @@ import { Banner } from "@/components/Containers/Banner";
 import { Contact } from "@/components/Containers/Contact";
 import { ContainerPrimary } from "@/components/Containers/ContainerPrimary";
 import { Events } from "@/components/Containers/Events";
+import { Footer } from "@/components/Containers/Footer";
 import { Header } from "@/components/Containers/Header";
 import { Main } from "@/components/Containers/Main";
 import { Maps } from "@/components/Containers/Maps";
@@ -22,6 +23,7 @@ export default function Home() {
         <Events />
         <Contact />
         <Maps />
+        <Footer />
       </ContainerPrimary>
       <ToastContainer autoClose={2000} />
     </>
