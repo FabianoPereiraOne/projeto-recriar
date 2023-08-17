@@ -28,9 +28,10 @@
 }
 
 .groupAddress h6{
- font-size: var(--size-28);
+ font-size: var(--size-24);
  color: var(--colors-blue);
  margin: 24px 0 0 0;
+ letter-spacing: 1px;
 }
 
 .address:first-of-type{
@@ -43,7 +44,7 @@
 }
 
 .address:not(:first-of-type){
- margin: 24px 0 0 0;
+ margin: 32px 0 0 0;
 }
 
 .address:not(:last-of-type){
@@ -57,7 +58,7 @@
  background: var(--colors-gray);
  position: absolute;
  left: 0;
- bottom: -6px;
+ bottom: -7px;
 }
 
 .address strong{
