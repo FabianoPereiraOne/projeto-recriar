@@ -1,33 +1,46 @@
 import { Title } from '@/components/Blocks/Title'
 import { SocialMedia } from '@/components/Blocks/socialMedia'
 import { ButtonMore } from '@/components/Elements/ButtonMore'
+import { useFormatDateTime } from '@/hooks/useFormatDateTime'
+import { useGetPostsData } from '@/hooks/useGetPostsData'
+import { getPostsType } from '@/types/getPostsType'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
 
 export const Events = () => {
+ const [events, setEvents] = useState<getPostsType[]>([])
+
+ useEffect(() => {
+  async function fetchData() {
+   try {
+    const { posts } = await useGetPostsData()
+    setEvents((oldValue) => [...posts, ...oldValue,])
+    console.log(posts);
+   } catch (err) {
+    console.log(err);
+   }
+  }
+  fetchData();
+ }, []);
+
  return (
   <section className={styles.container} id="events">
    <Title title='Eventos' subtitle='' />
-   <article className={styles.card}>
-    <figure className={styles.banner}>
-     <Image src="/assets/image.png" alt="Evento reunião geral" width={948} height={438} />
-     <time className={styles.time}>Dia 04/05 - 21hrs</time>
-    </figure>
-    <strong className={styles.title}>Reunião Geral</strong>
-    <address className={styles.address}><strong>Local:</strong> Rua Vinte e Cinco 532 Jardim das Alterosas</address>
-    <p className={styles.paragraph}>Nequedbadd suspendisse sed nunc in sit arcu amet. Sed orci at nisi soll ici tudin  ornare eget pelleLorene que dba dd sus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pelleLorsus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pellee...Ne quedbad dNequedbadd susp.</p>
-    <SocialMedia btnExploreVisible={false} router='https://teste.com' label='Veja mais sobre o evento' routerName='Saiba mais' />
-   </article>
-   <article className={styles.card}>
-    <figure className={styles.banner}>
-     <Image src="/assets/image.png" alt="Evento reunião geral" width={948} height={438} />
-     <time className={styles.time}>Dia 04/05 - 21hrs</time>
-    </figure>
-    <strong className={styles.title}>Reunião Geral</strong>
-    <address className={styles.address}><strong>Local:</strong> Rua Vinte e Cinco 532 Jardim das Alterosas</address>
-    <p className={styles.paragraph}>Nequedbadd suspendisse sed nunc in sit arcu amet. Sed orci at nisi soll ici tudin  ornare eget pelleLorene que dba dd sus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pelleLorsus pendisse sed nunc in sit arcu amet. Sed orci at nisi sollicitudin orna re eget v pellee...Ne quedbad dNequedbadd susp.</p>
-    <SocialMedia btnExploreVisible={false} router='#saibamais22' label='Veja mais sobre o evento' routerName='Saiba mais' />
-   </article>
+   {events.length > 0 ? events.map((event, index) => {
+    return (
+     <article key={index.toString()} className={styles.card}>
+      <figure className={styles.banner}>
+       <Image loader={() => event.coverImage.url} src={event.coverImage.url} alt={`Imagem do evento ${event.title}`} width={948} height={438} />
+       <time className={styles.time}>{useFormatDateTime(new Date(event.date))}</time>
+      </figure>
+      <strong className={styles.title}>{event.title}</strong>
+      <address className={styles.address}><strong>Local:</strong> {event.address}</address>
+      <p className={styles.paragraph}>{event.content.text}</p>
+      <SocialMedia btnExploreVisible={false} router='' label='Veja mais sobre o evento' routerName='Saiba mais' />
+     </article>
+    )
+   }) : ''}
    <ButtonMore />
   </section>
  )
