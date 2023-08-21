@@ -35,10 +35,11 @@ export const Events = () => {
    `)
 
       if (posts.length <= 0) {
-        setIsEmptyEvents
+        setIsEmptyEvents(true)
       } else {
         setOffset(oldValue => oldValue + 2)
         setEvents((oldValue) => [...posts, ...oldValue,])
+        setIsEmptyEvents(false)
       }
     } catch (err) {
       console.log(err);
@@ -49,8 +50,14 @@ export const Events = () => {
     async function fetchData() {
       try {
         const { posts } = await useGetPostsData()
-        setEvents((oldValue) => [...posts, ...oldValue,])
-        console.log(posts);
+        if (posts.length <= 0) {
+          setIsEmptyEvents(true)
+        } else {
+          setEvents((oldValue) => [...posts, ...oldValue,])
+          setIsEmptyEvents(false)
+        }
+
+
       } catch (err) {
         console.log(err);
       }
@@ -75,7 +82,7 @@ export const Events = () => {
           </article>
         )
       }) : <BlockEventEmpty />}
-      {isEmptyEvents && (
+      {isEmptyEvents ? '' : (
         <button className={styles.buttonMore} onClick={handlerMoreEvents}>
           Carregar Mais
         </button>)}
