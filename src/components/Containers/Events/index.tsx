@@ -3,8 +3,7 @@ import { Title } from '@/components/Blocks/Title'
 import { SocialMedia } from '@/components/Blocks/socialMedia'
 import { useFormatDateTime } from '@/hooks/useFormatDateTime'
 import { useGetPostsData } from '@/hooks/useGetPostsData'
-import { fetchHygraphql } from '@/lib/fetchHygraphql'
-import { getPostsType, responseProps } from '@/types/getPostsType'
+import { getPostsType } from '@/types/getPostsType'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
@@ -16,34 +15,7 @@ export const Events = () => {
   const [isEmptyEvents, setIsEmptyEvents] = useState(false)
 
   const handlerMoreEvents = async () => {
-    try {
-      const { posts }: responseProps = await fetchHygraphql(`
-   query GetAllEvents {
-    posts(orderBy: date_DESC, first: ${offset}, skip: ${limit}) {
-      id
-      title
-      content {
-        text
-      }
-      coverImage {
-        url
-      }
-      date
-      address
-    }
-   }
-   `)
-
-      if (posts.length <= 0) {
-        setIsEmptyEvents(true)
-      } else {
-        setOffset(oldValue => oldValue + 2)
-        setEvents((oldValue) => [...posts, ...oldValue,])
-        setIsEmptyEvents(false)
-      }
-    } catch (err) {
-      console.log(err);
-    }
+    //Codar aqui
   }
 
   useEffect(() => {

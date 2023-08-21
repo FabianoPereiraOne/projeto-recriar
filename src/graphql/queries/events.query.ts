@@ -1,6 +1,6 @@
 export const queryEvents = `
 query GetAllEvents {
- posts(orderBy: date_DESC, first: 2, skip: 1) {
+ posts(orderBy: date_DESC) {
    id
    title
    content {
