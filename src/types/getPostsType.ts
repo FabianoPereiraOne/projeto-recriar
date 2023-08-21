@@ -10,3 +10,7 @@ export type getPostsType = {
   date: Date
   address: string
 }
+
+export type responseProps = {
+  posts: getPostsType[]
+}

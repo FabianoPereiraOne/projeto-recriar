@@ -1,0 +1,16 @@
+.container{
+ width: 80%;
+ height: 60vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin: auto;
+}
+
+.container p{
+ font-size: var(--size-24);
+ font-weight: 500;
+ color: var(--colors-black);
+ text-align: center;
+}
