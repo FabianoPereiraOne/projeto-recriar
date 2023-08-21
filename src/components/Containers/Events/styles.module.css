@@ -115,7 +115,7 @@
  border-radius: 0 10px 0 10px;
 }
 
-.buttonMore{
+.buttonMore,.buttonMoreEmpty{
  margin: 48px 0;
  padding: 12px 36px;
  background: var(--colors-green);
@@ -129,22 +129,13 @@
  transition: 0.3s;
 }
 
-.buttonMore:hover{
- background: var(--colors-green-light);
+.buttonMoreEmpty{
+ pointer-events: none;
+ background: var(--colors-gray);
 }
 
-.notMore{
- pointer-events: none;
- margin: 48px 0;
- padding: 12px 48px;
- background: var(--colors-gray);
- font-size: var(--size-16);
- text-align: center;
- border: none;
- color: var(--colors-white);
- border-radius: 24px;
- font-family: var(--font-primary);
- letter-spacing: 1px;
+.buttonMore:hover{
+ background: var(--colors-green-light);
 }
 
 @media screen and (min-width: 768px){
@@ -190,7 +181,7 @@
   font-size: var(--size-20);
  }
 
- .buttonMore{
+ .buttonMore,.buttonMoreEmpty{
   margin: 76px 0;
  }
 }

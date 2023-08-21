@@ -3,19 +3,46 @@ import { Title } from '@/components/Blocks/Title'
 import { SocialMedia } from '@/components/Blocks/socialMedia'
 import { useFormatDateTime } from '@/hooks/useFormatDateTime'
 import { useGetPostsData } from '@/hooks/useGetPostsData'
-import { getPostsType } from '@/types/getPostsType'
+import { fetchHygraphql } from '@/lib/fetchHygraphql'
+import { getPostsType, responseProps } from '@/types/getPostsType'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
 
 export const Events = () => {
   const [events, setEvents] = useState<getPostsType[]>([])
-  const [limit, setLimit] = useState(1)
   const [offset, setOffset] = useState(2)
   const [isEmptyEvents, setIsEmptyEvents] = useState(false)
 
   const handlerMoreEvents = async () => {
-    //Codar aqui
+    try {
+      const { posts }: responseProps = await fetchHygraphql(`
+   query GetAllEvents {
+    posts(orderBy: date_DESC, first: 1, skip: ${offset}) {
+      id
+      title
+      content {
+        text
+      }
+      coverImage {
+        url
+      }
+      date
+      address
+    }
+   }
+   `)
+
+      if (posts.length <= 0) {
+        setIsEmptyEvents(true)
+      } else {
+        setOffset(offset + 1)
+        setIsEmptyEvents(false)
+        setEvents((oldValue) => [...oldValue, ...posts,])
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   useEffect(() => {
@@ -25,7 +52,7 @@ export const Events = () => {
         if (posts.length <= 0) {
           setIsEmptyEvents(true)
         } else {
-          setEvents((oldValue) => [...posts, ...oldValue,])
+          setEvents(posts)
           setIsEmptyEvents(false)
         }
 
@@ -54,10 +81,9 @@ export const Events = () => {
           </article>
         )
       }) : <BlockEventEmpty />}
-      {isEmptyEvents ? '' : (
-        <button className={styles.buttonMore} onClick={handlerMoreEvents}>
-          Carregar Mais
-        </button>)}
+      <button className={isEmptyEvents ? styles.buttonMoreEmpty : styles.buttonMore} onClick={handlerMoreEvents}>
+        Carregar Mais
+      </button>
     </section>
   )
 }
